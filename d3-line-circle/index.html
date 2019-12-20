@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>npm-package</title>
+    <style>
+        .blankblock {width:100%;height:200px;background:#ddd}
+        .wrap_chart {padding-left:50px}
+        .line_chart .wrap_line {fill:none}
+        .line_chart .wrap_line .path1 {stroke:#9eaeff}
+        .line_chart .wrap_line .path2 {stroke:#92c7ed}
+        .line_chart .wrap_line .path3 {stroke:#ccc}
+        .line_chart .wrap_dot_1 .dot {stroke-width:2px;stroke:#9eaeff;fill:#fff}
+        .line_chart .wrap_dot_2 .dot {stroke-width:2px;fill:#92c7ed}
+        .line_chart .wrap_dot_3 .dot {stroke-width:2px;fill:#ccc}
+        .line_chart .xAxis .tick .tick_txt {fill:#000}
+        .line_chart .yAxis .tick .tick_txt {fill:#000}
+        .line_chart .domain {display:none}
+        .line_chart .hidden_bar {cursor:pointer}
+        .line_chart .x_line {stroke:#000;stroke-dasharray:3}
+        .line_chart .wrap_dot_1 .dot {stroke:#fff}
+
+        .tick line {stroke:#e9ecf8}
+        .line_chart .tick line {stroke:#e9ecf8}
+        .line_chart .xAxis .tick .tick_txt {font-size:13px}
+        .circle_txt {opacity:0;font-size:16px;font-weight:bold;fill:#777}
+
+        .circle_txt.circle_txt2 {font-size:12px}
+        .circleG.max .dot {fill:#4876ef}
+        .circleG.max .circle_txt {fill:#fff}
+        .line_chart .circle_txt {opacity:0;font-size:16px;font-weight:bold;fill:#777}
+        .line_chart .circle_txt.circle_txt2 {font-size:12px}
+        .line_chart .wrap_dot_1 .circleG:last-child .dot {fill:#4876ef}
+        .line_chart .wrap_dot_1 .circleG:last-child .circle_txt {fill:#fff}
+        .line_chart .wrap_dot_1 .dot {stroke-width:0}
+        .line_chart .xAxis .tick:last-child text {fill:#4876ef}
+    </style>
+</head>
+<body>
+<div id="wrap">
+    <div class="container">
+        <div class="columns">
+            <div class="column col-12" style="height:500px">
+                <div class="wrap_chart chart08"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="./sample/test/build.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var data = [
+            [
+                [
+                    {"2016년" : 3000, "2017년" : 7602, "2018년" : 8902}
+                ],
+                [
+                    "2016년","2017년","2018년"
+                ]
+            ]
+        ];
+        new UI.LineCircle('.chart08', {
+            ticks:6,
+            w:390,
+            h:160,
+            mTop: 30,
+            mRight: 0,
+            mBottom: 20,
+            mLeft: 0,
+            circleNormal: 30,
+            circlePoint: 40,
+            circleZero: 4,
+            labelCurreny: '만원',
+            scoreDx:'-1.2em',
+            scoreDy:'0.2em',
+            currencyDx: '-1em',
+            currencyDy: '1.7em'
+        },data);
+    });
+</script>
+</body>
+</html>
